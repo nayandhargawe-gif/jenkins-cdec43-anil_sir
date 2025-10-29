@@ -31,7 +31,7 @@
 
 
 pipeline {
-    agent any
+    agent {label 'slave'}
     stages {
         stage('git_checkout') {
             steps {
