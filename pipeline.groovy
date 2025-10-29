@@ -1,33 +1,33 @@
-pipeline {
-    agent any
-    stages {
-        stage('git_checkout') {
-            steps {
-                echo "pull-sucess"
-            }
-        }
-        stage('build-stage') {
-            steps {
+// pipeline {
+//     agent  {label 'slave'}
+//     stages {
+//         stage('git_checkout') {
+//             steps {
+//                 echo "pull-sucess"
+//             }
+//         }
+//         stage('build-stage') {
+//             steps {
                
-                echo "build-sucess" 
-            }
-        }
-        stage('test-stage') {
-            steps {
+//                 echo "build-sucess" 
+//             }
+//         }
+//         stage('test-stage') {
+//             steps {
                
-                echo "test-sucess" 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "deploy-sucess"
-            }
-        }
-    }
-}
+//                 echo "test-sucess" 
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                 echo "deploy-sucess"
+//             }
+//         }
+//     }
+// }
 
 
----
+// ---
 
 
 pipeline {
