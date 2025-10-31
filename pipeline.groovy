@@ -28,10 +28,8 @@
 
 
 // ---
-
-
 pipeline {
-    agent {label 'slave'}
+    agent {label 'master'}
     stages {
         stage('git_checkout') {
             steps {
@@ -41,7 +39,7 @@ pipeline {
         stage('build-stage') {
             steps {
                
-                echo "build-sucess" 
+                 sh '/opt/maven/bin/mvn clean package'
             }
         }
         stage('test-stage') {
@@ -57,3 +55,4 @@ pipeline {
         }
     }
 }
+
