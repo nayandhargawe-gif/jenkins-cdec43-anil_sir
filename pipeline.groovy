@@ -29,7 +29,7 @@
 
 // ---
 pipeline {
-    agent {label 'master'}
+    agent {label 'slave'}
     stages {
         stage('git_checkout') {
             steps {
