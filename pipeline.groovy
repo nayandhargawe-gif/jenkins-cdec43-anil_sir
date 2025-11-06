@@ -1,4 +1,4 @@
-// pipeline {
+  // pipeline {
 //     agent  {label 'slave'}
 //     stages {
 //         stage('git_checkout') {
@@ -56,8 +56,8 @@ pipeline {
          stage('Quality-gate'){
             steps{
                 timeout(10) {
-    // some block
-}
+   
+                } 
                 waitForQualityGate true
             }
         }
