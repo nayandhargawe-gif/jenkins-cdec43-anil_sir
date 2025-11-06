@@ -58,7 +58,7 @@ pipeline {
                 timeout(10) {
                
             }
-                waitForQualityGate false
+                waitForQualityGate true
             }
         }
       
