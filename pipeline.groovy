@@ -46,12 +46,12 @@ pipeline {
         }
         stage('test-stage') {
             steps {
-            //    withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-cred') {
+               withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-cred') {
             // //         sh '/opt/maven/bin/mvn sonar:sonar' 
-            // }
-              withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonarQube') {
-                    // sh '/opt/maven/bin/mvn sonar:sonar'
             }
+            //   withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonarQube') {
+            //         // sh '/opt/maven/bin/mvn sonar:sonar'
+            // }
                   // sh '''/opt/maven/bin/mvn sonar:sonar -Dsonar.projectKey=studentapp1 -Dsonar.host.url=http://172.31.11.57:9000 -Dsonar.login=c7d0475cab0ac0bc8a86058578e0e85ea1c14b86'''
         }
         }
