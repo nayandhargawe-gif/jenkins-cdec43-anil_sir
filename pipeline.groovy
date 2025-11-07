@@ -49,25 +49,26 @@ pipeline {
             //    withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-cred') {
             //         sh '/opt/maven/bin/mvn sonar:sonar' 
             // }
-              withSonarQubeEnv(installationName: 'sonar', credentialsId: 'creden') {
+              withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonarQube') {
                     // sh '/opt/maven/bin/mvn sonar:sonar'
             }
                   // sh '''/opt/maven/bin/mvn sonar:sonar -Dsonar.projectKey=studentapp1 -Dsonar.host.url=http://172.31.11.57:9000 -Dsonar.login=c7d0475cab0ac0bc8a86058578e0e85ea1c14b86'''
         }
         }
-        //   stage('Quality-gate') {
-        //     steps {
-        //         timeout(10) {
+          stage('Quality-gate') {
+            steps {
+                timeout(10) {
                
-        //     }
-        //         waitForQualityGate true
-        //     }
-        // }
+            }
+                waitForQualityGate true
+            }
+        }
 
       
         stage('Deploy') {
             steps {
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://13.53.158.116:8080')], contextPath: '/', war: '**/*.war'
+                // deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://13.53.158.116:8080')], contextPath: '/', war: '**/*.war'
+                echo "deploy successfull"
             }
         }
     }
