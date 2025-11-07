@@ -60,7 +60,7 @@ pipeline {
                 timeout(10) {
                
             }
-                waitForQualityGate abortPipeline: true, credentialsId: 'sonar-cred'
+                waitForQualityGate true
             }
         }
 
