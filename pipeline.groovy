@@ -73,7 +73,7 @@ pipeline {
       
         stage('Deploy') {
             steps {
-                  deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: '13.49.137.130:8080')], contextPath: '/', war: '**/*.war'  
+                  deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://13.49.137.130:8080')], contextPath: '/', war: '**/*.war'  
               // deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://13.53.158.116:8080')], contextPath: '/', war: '**/*.war'
                 // echo "deploy successfull"
             }
