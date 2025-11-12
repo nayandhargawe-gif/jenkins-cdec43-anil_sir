@@ -64,7 +64,12 @@ pipeline {
                 waitForQualityGate abortPipeline: true, credentialsId: 'sonar-cred'
             }
         }
-
+        stage('S3-Artifactory') {
+            steps {
+               sh '''aws s3 cp target/studentapp-2.2-SNAPSHOT.war s3:bucketforjenkinspipeline'''
+              // sh 'aws s3 cp target/studentapp-2.2-SNAPSHOT.war  s3://new-terr-buck-atrifatory097'
+            }
+        }
       
         stage('Deploy') {
             steps {
