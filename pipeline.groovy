@@ -61,7 +61,7 @@ pipeline {
                
             }
                 // waitForQualityGate true
-                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-cred'
+                waitForQualityGate abortPipeline: true, credentialsId: 'sonar-cred'
             }
         }
 
